@@ -148,7 +148,7 @@ footer a { color: #e5c6ff; }
 <body>
 
 <header>
-  <h2>🎓 NRI UTSAV 2026</h2>
+  <h2> NRI UTSAV 2026</h2>
   <nav>
     <a href="#home">Home</a>
     <a href="#events">Events</a>
@@ -172,7 +172,7 @@ footer a { color: #e5c6ff; }
 <!-- TECHNICAL AND CULTURAL EVENTS -->
 <section id="events">
   <div class="heading">
-    <h2>🚀 Technical & Cultural Events</h2>
+    <h2> Technical & Cultural Events</h2>
     <p>Show your talent and enjoy the celebration!</p>
   </div>
 
@@ -236,7 +236,7 @@ footer a { color: #e5c6ff; }
 <!-- FEST SCHEDULE -->
 <section id="schedule">
   <div class="heading">
-    <h2>📅 Festival Schedule</h2>
+    <h2> Festival Schedule</h2>
     <p>A day full of exciting activities.</p>
   </div>
 
@@ -255,7 +255,7 @@ footer a { color: #e5c6ff; }
 <!-- FOOD STALLS -->
 <section id="food">
   <div class="heading">
-    <h2>🍽️ Festival Food Street</h2>
+    <h2> Festival Food Street</h2>
     <p>Delicious food and refreshing drinks for everyone!</p>
   </div>
 
@@ -263,7 +263,7 @@ footer a { color: #e5c6ff; }
     <div class="card">
       <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=80" alt="Biryani">
       <div class="card-content">
-        <h3>🍗 Biryani Stall</h3>
+        <h3> Biryani Stall</h3>
         <p>Chicken Biryani, Veg Biryani, Paneer Rice.</p>
         <p class="price">₹80 – ₹160</p>
       </div>
@@ -272,7 +272,7 @@ footer a { color: #e5c6ff; }
     <div class="card">
       <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=700&q=80" alt="Snacks">
       <div class="card-content">
-        <h3>🍟 Snacks Stall</h3>
+        <h3> Snacks Stall</h3>
         <p>Pani Puri, Samosa, French Fries, Manchuria.</p>
         <p class="price">₹20 – ₹90</p>
       </div>
@@ -281,7 +281,7 @@ footer a { color: #e5c6ff; }
     <div class="card">
       <img src="https://images.unsplash.com/photo-1513558161293-caad7ea9420b?auto=format&fit=crop&w=700&q=80" alt="Drinks">
       <div class="card-content">
-        <h3>🥤 Drinks Stall</h3>
+        <h3> Drinks Stall</h3>
         <p>Lemon Soda, Fresh Juice, Mocktails, Cool Drinks.</p>
         <p class="price">₹25 – ₹80</p>
       </div>
@@ -290,7 +290,7 @@ footer a { color: #e5c6ff; }
     <div class="card">
       <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80" alt="Noodles">
       <div class="card-content">
-        <h3>🍜 Chinese Stall</h3>
+        <h3> Chinese Stall</h3>
         <p>Veg Noodles, Fried Rice, Gobi Manchurian.</p>
         <p class="price">₹60 – ₹120</p>
       </div>
@@ -299,7 +299,7 @@ footer a { color: #e5c6ff; }
     <div class="card">
       <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80" alt="Cake">
       <div class="card-content">
-        <h3>🍰 Sweets Stall</h3>
+        <h3> Sweets Stall</h3>
         <p>Cakes, Brownies, Ice Cream, Gulab Jamun.</p>
         <p class="price">₹30 – ₹100</p>
       </div>
@@ -308,7 +308,7 @@ footer a { color: #e5c6ff; }
     <div class="card">
       <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80" alt="Vegetarian food">
       <div class="card-content">
-        <h3>🥗 Veg Food Stall</h3>
+        <h3> Veg Food Stall</h3>
         <p>Sandwiches, Veg Rolls and Healthy Bowls.</p>
         <p class="price">₹40 – ₹100</p>
       </div>
@@ -319,7 +319,7 @@ footer a { color: #e5c6ff; }
 <!-- GUESTS -->
 <section id="guests">
   <div class="heading">
-    <h2>🌟 Distinguished Guests</h2>
+    <h2> Distinguished Guests</h2>
     <p>Special invitations for our college festival.</p>
   </div>
 
@@ -347,7 +347,7 @@ footer a { color: #e5c6ff; }
 <!-- REGISTRATION FORM -->
 <section id="register">
   <div class="heading">
-    <h2>📝 Fest Registration</h2>
+    <h2> Fest Registration</h2>
     <p>Register to participate in NRI Utsav!</p>
   </div>
 
