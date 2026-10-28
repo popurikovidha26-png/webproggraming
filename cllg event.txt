@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NRI Utsav - College Fest</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #faf7ff;
+  color: #25183d;
+}
+header {
+  background: #211536;
+  color: white;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+header h2 { color: #e5c6ff; }
+nav { display: flex; gap: 15px; flex-wrap: wrap; }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+nav a:hover { color: #ffcb70; }
+
+.hero {
+  min-height: 500px;
+  padding: 100px 8%;
+  color: white;
+  background:
+    linear-gradient(90deg, #201432ee, #20143266),
+    url("https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1500&q=85")
+    center/cover;
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 65px);
+  margin: 20px 0;
+}
+.hero h1 span { color: #e3bfff; }
+.hero p { margin: 15px 0; line-height: 1.7; }
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  margin: 10px 8px 0 0;
+  background: #7844ed;
+  color: white;
+  border-radius: 7px;
+  text-decoration: none;
+}
+section { padding: 50px 7%; }
+.heading { text-align: center; margin-bottom: 30px; }
+.heading h2 { font-size: 30px; margin-bottom: 10px; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px #21153618;
+  transition: .25s;
+}
+.card:hover { transform: translateY(-5px); }
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-content { padding: 18px; }
+.card h3 { color: #713bea; margin-bottom: 10px; }
+.card p { color: #666; line-height: 1.6; font-size: 14px; }
+.price { margin-top: 10px; font-weight: bold; }
+
+#schedule, #guests { background: #eee6ff; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 13px;
+  text-align: left;
+}
+th { background: #713bea; color: white; }
+
+form {
+  max-width: 600px;
+  margin: auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+}
+form label { display: block; margin-top: 12px; }
+form input, form select, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 7px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+form button {
+  background: #713bea;
+  color: white;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 7px;
+  margin-top: 18px;
+  cursor: pointer;
+}
+#message { color: green; margin-top: 12px; }
+
+footer {
+  background: #211536;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+footer a { color: #e5c6ff; }
+
+@media(max-width:600px) {
+  header { justify-content: center; }
+  nav { justify-content: center; }
+  .hero { padding: 70px 6%; }
+  section { padding: 35px 5%; }
+  table { font-size: 12px; }
+  th, td { padding: 8px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>🎓 NRI UTSAV 2026</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#food">Food Stalls</a>
+    <a href="#guests">Guests</a>
+    <a href="#register">Register</a>
+  </nav>
+</header>
+
+<!-- HOME PAGE -->
+<section class="hero" id="home">
+  <p>NRI UNIVERSITY • AGIRIPALLI</p>
+  <h1>One Campus.<br><span>Countless Memories.</span></h1>
+  <p>Welcome to the grand celebration of technology, culture,<br>
+  music, food and student talent!</p>
+  <a href="#events" class="btn">Explore Events ↗</a>
+  <a href="#register" class="btn">Register Now ↗</a>
+</section>
+
+<!-- TECHNICAL AND CULTURAL EVENTS -->
+<section id="events">
+  <div class="heading">
+    <h2>🚀 Technical & Cultural Events</h2>
+    <p>Show your talent and enjoy the celebration!</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Coding event">
+      <div class="card-content">
+        <h3>CodeSprint Hackathon</h3>
+        <p>Build creative software solutions with your team.</p>
+        <a href="#register" class="btn">Register</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=700&q=80" alt="Engineering project">
+      <div class="card-content">
+        <h3>Project Expo</h3>
+        <p>Present engineering models, apps and innovations.</p>
+        <a href="#register" class="btn">Register</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=700&q=80" alt="Live music">
+      <div class="card-content">
+        <h3>Music Performance</h3>
+        <p>Enjoy live music and student singing performances.</p>
+        <a href="#register" class="btn">Register</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=700&q=80" alt="Dance performance">
+      <div class="card-content">
+        <h3>Dance Competition</h3>
+        <p>Solo and group dance performances on the main stage.</p>
+        <a href="#register" class="btn">Register</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=700&q=80" alt="Programming">
+      <div class="card-content">
+        <h3>Tech Quiz</h3>
+        <p>Test your knowledge of science and technology.</p>
+        <a href="#register" class="btn">Register</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=700&q=80" alt="Workshop speaker">
+      <div class="card-content">
+        <h3>Innovation Workshop</h3>
+        <p>Learn new skills and explore innovative ideas.</p>
+        <a href="#register" class="btn">Register</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEST SCHEDULE -->
+<section id="schedule">
+  <div class="heading">
+    <h2>📅 Festival Schedule</h2>
+    <p>A day full of exciting activities.</p>
+  </div>
+
+  <table>
+    <tr><th>Time</th><th>Event</th><th>Venue</th></tr>
+    <tr><td>9:00 AM</td><td>Opening Ceremony</td><td>Main Stage</td></tr>
+    <tr><td>10:00 AM</td><td>Guest Speeches</td><td>Main Stage</td></tr>
+    <tr><td>11:00 AM</td><td>Hackathon & Tech Quiz</td><td>Tech Block</td></tr>
+    <tr><td>1:00 PM</td><td>Food Festival</td><td>Food Court</td></tr>
+    <tr><td>2:30 PM</td><td>Dance & Singing</td><td>Open Arena</td></tr>
+    <tr><td>4:30 PM</td><td>Business Guest Address</td><td>Main Stage</td></tr>
+    <tr><td>6:00 PM</td><td>Music & Grand Finale</td><td>Main Stage</td></tr>
+  </table>
+</section>
+
+<!-- FOOD STALLS -->
+<section id="food">
+  <div class="heading">
+    <h2>🍽️ Festival Food Street</h2>
+    <p>Delicious food and refreshing drinks for everyone!</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=80" alt="Biryani">
+      <div class="card-content">
+        <h3>🍗 Biryani Stall</h3>
+        <p>Chicken Biryani, Veg Biryani, Paneer Rice.</p>
+        <p class="price">₹80 – ₹160</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=700&q=80" alt="Snacks">
+      <div class="card-content">
+        <h3>🍟 Snacks Stall</h3>
+        <p>Pani Puri, Samosa, French Fries, Manchuria.</p>
+        <p class="price">₹20 – ₹90</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1513558161293-caad7ea9420b?auto=format&fit=crop&w=700&q=80" alt="Drinks">
+      <div class="card-content">
+        <h3>🥤 Drinks Stall</h3>
+        <p>Lemon Soda, Fresh Juice, Mocktails, Cool Drinks.</p>
+        <p class="price">₹25 – ₹80</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80" alt="Noodles">
+      <div class="card-content">
+        <h3>🍜 Chinese Stall</h3>
+        <p>Veg Noodles, Fried Rice, Gobi Manchurian.</p>
+        <p class="price">₹60 – ₹120</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80" alt="Cake">
+      <div class="card-content">
+        <h3>🍰 Sweets Stall</h3>
+        <p>Cakes, Brownies, Ice Cream, Gulab Jamun.</p>
+        <p class="price">₹30 – ₹100</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80" alt="Vegetarian food">
+      <div class="card-content">
+        <h3>🥗 Veg Food Stall</h3>
+        <p>Sandwiches, Veg Rolls and Healthy Bowls.</p>
+        <p class="price">₹40 – ₹100</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUESTS -->
+<section id="guests">
+  <div class="heading">
+    <h2>🌟 Distinguished Guests</h2>
+    <p>Special invitations for our college festival.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=700&q=80" alt="Guest speaker">
+      <div class="card-content">
+        <h3>Chief Guest: Police Commissioner</h3>
+        <p>Proposed guest speech about leadership, public service and youth responsibility.</p>
+        <p><b>Invitation to be confirmed.</b></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80" alt="Businessman">
+      <div class="card-content">
+        <h3>Special Invitee: Businessman</h3>
+        <p>Proposed guest speech about entrepreneurship, careers and innovation.</p>
+        <p><b>Invitation to be confirmed.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION FORM -->
+<section id="register">
+  <div class="heading">
+    <h2>📝 Fest Registration</h2>
+    <p>Register to participate in NRI Utsav!</p>
+  </div>
+
+  <form id="festForm">
+    <label>Full Name *</label>
+    <input id="studentName" type="text" placeholder="Enter your name" required>
+
+    <label>College / Department *</label>
+    <input type="text" placeholder="NRI University - CSE" required>
+
+    <label>Email *</label>
+    <input type="email" placeholder="Enter email address" required>
+
+    <label>Phone Number *</label>
+    <input type="tel" placeholder="Enter phone number" required>
+
+    <label>Choose Category *</label>
+    <select required>
+      <option value="">Select category</option>
+      <option>Technical Events</option>
+      <option>Cultural Competitions</option>
+      <option>Workshop</option>
+      <option>General Entry</option>
+      <option>Volunteer</option>
+    </select>
+
+    <label>Preferred Event</label>
+    <select>
+      <option>Choose event</option>
+      <option>Hackathon</option>
+      <option>Project Expo</option>
+      <option>Tech Quiz</option>
+      <option>Dance Competition</option>
+      <option>Music Performance</option>
+    </select>
+
+    <label>Message</label>
+    <textarea rows="3" placeholder="Team details or questions"></textarea>
+
+    <button type="submit">Submit Registration</button>
+    <p id="message"></p>
+  </form>
+</section>
+
+<footer>
+  <h2>NRI UTSAV 2026</h2>
+  <p>NRI University, Agiripalli</p>
+  <p>Innovate • Perform • Celebrate</p>
+  <a href="#home">Back to Top ↑</a>
+</footer>
+
+<script>
+document.getElementById("festForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let name = document.getElementById("studentName").value;
+  document.getElementById("message").textContent =
+    "Thank you, " + name + "! Demo registration successful.";
+  this.reset();
+});
+</script>
+
+</body>
+</html>
