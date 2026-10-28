@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanthi Bakery & Cake Shop</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff8f2;
+    color: #43251c;
+}
+
+header {
+    background: #6b3026;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd6a5;
+}
+
+.hero {
+    min-height: 450px;
+    background: linear-gradient(
+        rgba(40, 15, 10, 0.5),
+        rgba(40, 15, 10, 0.5)
+    ), url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #f3a65a;
+    color: #3e2119;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+}
+
+section {
+    padding: 55px 7%;
+}
+
+.section-title {
+    text-align: center;
+    color: #843d2d;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #795b50;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px #00000015;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #6b3026;
+}
+
+.card p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.price {
+    color: #b44b25;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.offer {
+    background: #f9dfc7;
+    text-align: center;
+    border-top: 3px dashed #c4774c;
+    border-bottom: 3px dashed #c4774c;
+}
+
+.offer h2 {
+    font-size: 32px;
+    color: #803b27;
+    margin-bottom: 15px;
+}
+
+.offer p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+.custom {
+    background: #fff0e5;
+    text-align: center;
+}
+
+.custom p {
+    max-width: 700px;
+    margin: 15px auto 25px;
+    line-height: 1.8;
+}
+
+.contact {
+    background: #6b3026;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #ffd6a5;
+}
+
+.contact p {
+    margin: 14px 0;
+    line-height: 1.7;
+}
+
+footer {
+    background: #3e2119;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        line-height: 2;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎂 Shanthi Bakery</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#cakes">Cakes</a>
+        <a href="#pastries">Pastries</a>
+        <a href="#offers">Offers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div>
+        <h1>Welcome to Shanthi Bakery</h1>
+        <p>Freshly Baked Happiness in Every Bite!</p>
+        <p>Cakes • Pastries • Cookies • Special Treats</p>
+        <a href="#cakes" class="btn">Explore Our Menu</a>
+    </div>
+</section>
+
+<!-- CAKES -->
+<section id="cakes">
+    <h2 class="section-title">🍰 Our Delicious Cakes</h2>
+    <p class="subtitle">Made with love, fresh cream and premium ingredients.</p>
+
+    <div class="products">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80" alt="Chocolate birthday cake">
+            <div class="card-content">
+                <h3>Chocolate Cake</h3>
+                <p>Rich chocolate with creamy frosting.</p>
+                <div class="price">₹550</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=700&q=80" alt="Strawberry cream cake">
+            <div class="card-content">
+                <h3>Strawberry Cake</h3>
+                <p>Soft sponge with fresh strawberry cream.</p>
+                <div class="price">₹600</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=700&q=80" alt="Birthday celebration cake">
+            <div class="card-content">
+                <h3>Birthday Cake</h3>
+                <p>A special cake for your special day.</p>
+                <div class="price">₹750</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=700&q=80" alt="Cheesecake dessert">
+            <div class="card-content">
+                <h3>Cheese Cake</h3>
+                <p>Delicious, creamy and smooth cheesecake.</p>
+                <div class="price">₹180 / slice</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PASTRIES AND COOKIES -->
+<section id="pastries" style="background:#fff0e5;">
+    <h2 class="section-title">🧁 Pastries & Cookies</h2>
+    <p class="subtitle">Perfect little treats for every occasion.</p>
+
+    <div class="products">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80" alt="Cream pastry dessert">
+            <div class="card-content">
+                <h3>Fresh Cream Pastry</h3>
+                <p>Soft layers with delicious cream.</p>
+                <div class="price">₹70</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=80" alt="Chocolate chip cookies">
+            <div class="card-content">
+                <h3>Chocolate Cookies</h3>
+                <p>Crispy cookies filled with chocolate chips.</p>
+                <div class="price">₹120 / pack</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80" alt="Fresh bakery bread">
+            <div class="card-content">
+                <h3>Fresh Bakery Bread</h3>
+                <p>Soft, fresh and baked every day.</p>
+                <div class="price">₹50</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80" alt="Colorful donuts">
+            <div class="card-content">
+                <h3>Chocolate Donuts</h3>
+                <p>Sweet donuts with delicious toppings.</p>
+                <div class="price">₹60</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OFFERS -->
+<section class="offer" id="offers">
+    <h2>🎉 Special Seasonal Offers 🎉</h2>
+    <p>Celebrate every occasion with Shanthi Bakery!</p>
+    <p>🎂 Birthday Special: 10% OFF on selected cakes</p>
+    <p>🍪 Cookie Combo: Buy 2 Packs and Get 1 Mini Pack</p>
+    <p>🎄 Festival Treats: Special cakes and dessert collections</p>
+    <p><b>Visit our bakery to know the current offers!</b></p>
+</section>
+
+<!-- CUSTOM CAKES -->
+<section class="custom">
+    <h2 class="section-title">🎨 Custom Cake Designs</h2>
+    <p>
+        Make your celebrations memorable with our customized cakes.
+        Choose your favorite flavor, color, size and design for birthdays,
+        weddings, anniversaries and other special occasions.
+    </p>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=700&q=80" alt="Decorated celebration cake">
+        <img src="https://images.unsplash.com/photo-1464195244916-405fa0a82545?auto=format&fit=crop&w=700&q=80" alt="Beautiful custom cake">
+        <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=700&q=80" alt="Special occasion cake">
+    </div>
+
+    <p><b>Custom cake prices depend on size, flavor and design.</b></p>
+    <a href="#contact" class="btn">Contact Us</a>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2 class="section-title">📸 Our Bakery Gallery</h2>
+    <p class="subtitle">A little look at our world of sweet creations.</p>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1557925923-cd4648e211a0?auto=format&fit=crop&w=700&q=80" alt="Bakery cake display">
+        <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=700&q=80" alt="Freshly baked pastries">
+        <img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=700&q=80" alt="Sweet bakery desserts">
+        <img src="https://images.unsplash.com/photo-1506459225024-1428097a7e18?auto=format&fit=crop&w=700&q=80" alt="Bakery treats">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2 class="section-title">📍 Visit Shanthi Bakery</h2>
+    <p>Freshness, sweetness and happiness every day!</p>
+    <p><b>Address:</b> Add your bakery address here</p>
+    <p><b>Phone:</b> Add your contact number here</p>
+    <p><b>Email:</b> shanthibakery@example.com</p>
+    <p><b>Opening Hours:</b> Monday – Sunday, 8:00 AM – 9:00 PM</p>
+    <a href="mailto:shanthibakery@example.com" class="btn">Email Us</a>
+</section>
+
+<footer>
+    <p>© 2026 Shanthi Bakery & Cake Shop | Made with ❤️</p>
+    <p>Fresh Cakes • Sweet Memories • Happy Moments</p>
+</footer>
+
+</body>
+</html>
