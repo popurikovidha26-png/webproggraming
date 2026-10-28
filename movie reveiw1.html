@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineWorld - Movie Reviews</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #101018;
+    color: white;
+}
+
+header {
+    background: #191923;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    color: #ff4757;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    color: #ff4757;
+}
+
+.hero {
+    padding: 65px 20px;
+    text-align: center;
+    background: linear-gradient(120deg, #50111d, #17172b);
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+.search-box {
+    width: 90%;
+    max-width: 500px;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.section {
+    padding: 35px 7%;
+}
+
+.section h2 {
+    margin-bottom: 25px;
+    border-left: 5px solid #ff4757;
+    padding-left: 12px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.movie-card {
+    background: #20202c;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px #0008;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+}
+
+.movie-info {
+    padding: 18px;
+}
+
+.movie-info h3 {
+    color: #ffcc70;
+    margin-bottom: 10px;
+}
+
+.genre {
+    display: inline-block;
+    background: #393949;
+    padding: 5px 9px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.movie-info p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.rating {
+    color: #ffd32a;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.reviews-list {
+    margin-top: 15px;
+    border-top: 1px solid #454553;
+    padding-top: 12px;
+}
+
+.reviews-list h4 {
+    color: #ffcc70;
+    margin-bottom: 12px;
+}
+
+.review-item {
+    background: #292936;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.review-item h5 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.review-stars {
+    color: #ffd32a;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.review-item p {
+    color: #ddd;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+button {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #e52d40;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #191923;
+    color: #aaa;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .section {
+        padding: 25px 5%;
+    }
+
+    .movie-card img {
+        height: 280px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎬 CineWorld</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Welcome to CineWorld 🍿</h1>
+    <p>Discover Movies, Read Reviews & Rate Your Favorites!</p>
+    <input type="text" id="search" class="search-box"
+    placeholder="Search movies or genres..."
+    oninput="searchMovies()">
+</section>
+
+<section class="section" id="movies">
+<h2>⭐ Popular Movies</h2>
+
+<div class="movie-grid" id="movieGrid">
+
+<!-- MOVIE 1 -->
+<div class="movie-card">
+<img src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"
+alt="Spider-Man No Way Home Poster">
+<div class="movie-info">
+<h3>Spider-Man: No Way Home</h3>
+<span class="genre">Action / Adventure</span>
+<p><b>Release:</b> 2021</p>
+<p><b>Cast:</b> Tom Holland, Zendaya</p>
+<p><b>Story:</b> Peter Parker faces a multiverse adventure that changes his life.</p>
+<div class="rating">⭐ 8.2 / 10</div>
+
+<div class="reviews-list">
+<h4>📝 Movie Reviews</h4>
+<div class="review-item">
+<h5>Rahul - Movie Fan</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>Amazing action scenes and an emotional story. A fantastic superhero movie!</p>
+</div>
+<div class="review-item">
+<h5>Priya - Film Reviewer</h5>
+<div class="review-stars">★★★★☆ 4/5</div>
+<p>The multiverse concept is exciting, and the performances are memorable.</p>
+</div>
+<div class="review-item">
+<h5>Arjun - Student</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>Fantastic visuals, surprises, and great moments for Spider-Man fans.</p>
+</div>
+</div>
+<button onclick="rateMovie(this)">Rate Movie ⭐</button>
+</div>
+</div>
+
+<!-- MOVIE 2 -->
+<div class="movie-card">
+<img src="https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"
+alt="The Shawshank Redemption Poster">
+<div class="movie-info">
+<h3>The Shawshank Redemption</h3>
+<span class="genre">Drama</span>
+<p><b>Release:</b> 1994</p>
+<p><b>Cast:</b> Tim Robbins, Morgan Freeman</p>
+<p><b>Story:</b> Two prisoners develop a strong friendship while hoping for a better future.</p>
+<div class="rating">⭐ 9.3 / 10</div>
+
+<div class="reviews-list">
+<h4>📝 Movie Reviews</h4>
+<div class="review-item">
+<h5>Kiran - Movie Fan</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>A beautiful story about hope, friendship, and never giving up.</p>
+</div>
+<div class="review-item">
+<h5>Sneha - Film Reviewer</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>Powerful acting and excellent storytelling. Every scene has meaning.</p>
+</div>
+<div class="review-item">
+<h5>Vikram - Student</h5>
+<div class="review-stars">★★★★☆ 4/5</div>
+<p>A meaningful drama with memorable characters and a satisfying story.</p>
+</div>
+</div>
+<button onclick="rateMovie(this)">Rate Movie ⭐</button>
+</div>
+</div>
+
+<!-- MOVIE 3 -->
+<div class="movie-card">
+<img src="https://image.tmdb.org/t/p/w500/ptpr0kGAckfQkJeJIt8st5dglvd.jpg"
+alt="Oppenheimer Poster">
+<div class="movie-info">
+<h3>Oppenheimer</h3>
+<span class="genre">Drama / History</span>
+<p><b>Release:</b> 2023</p>
+<p><b>Cast:</b> Cillian Murphy, Emily Blunt</p>
+<p><b>Story:</b> A historical drama about the scientist behind the atomic bomb.</p>
+<div class="rating">⭐ 8.3 / 10</div>
+
+<div class="reviews-list">
+<h4>📝 Movie Reviews</h4>
+<div class="review-item">
+<h5>Rohit - Movie Fan</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>Brilliant performances and intense storytelling throughout the film.</p>
+</div>
+<div class="review-item">
+<h5>Meghana - Film Reviewer</h5>
+<div class="review-stars">★★★★☆ 4/5</div>
+<p>A powerful historical drama with impressive cinematography and sound.</p>
+</div>
+<div class="review-item">
+<h5>Ajay - Student</h5>
+<div class="review-stars">★★★★☆ 4/5</div>
+<p>Interesting and thought-provoking, with complex scientific discussions.</p>
+</div>
+</div>
+<button onclick="rateMovie(this)">Rate Movie ⭐</button>
+</div>
+</div>
+
+<!-- MOVIE 4 -->
+<div class="movie-card">
+<img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+alt="Interstellar Poster">
+<div class="movie-info">
+<h3>Interstellar</h3>
+<span class="genre">Sci-Fi / Adventure</span>
+<p><b>Release:</b> 2014</p>
+<p><b>Cast:</b> Matthew McConaughey, Anne Hathaway</p>
+<p><b>Story:</b> Astronauts travel through space searching for a new home for humanity.</p>
+<div class="rating">⭐ 8.7 / 10</div>
+
+<div class="reviews-list">
+<h4>📝 Movie Reviews</h4>
+<div class="review-item">
+<h5>Varun - Movie Fan</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>A breathtaking space adventure with a strong emotional connection.</p>
+</div>
+<div class="review-item">
+<h5>Divya - Film Reviewer</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>Outstanding visuals, music, and a fascinating science-fiction concept.</p>
+</div>
+<div class="review-item">
+<h5>Manoj - Student</h5>
+<div class="review-stars">★★★★☆ 4/5</div>
+<p>A unique film that makes you think about space, time, and family.</p>
+</div>
+</div>
+<button onclick="rateMovie(this)">Rate Movie ⭐</button>
+</div>
+</div>
+
+<!-- MOVIE 5 -->
+<div class="movie-card">
+<img src="https://image.tmdb.org/t/p/w500/6PFqQv7V4q2aV7k3Z7F0F8Zq5Y.jpg"
+alt="Free Guy Poster">
+<div class="movie-info">
+<h3>Free Guy</h3>
+<span class="genre">Comedy / Action</span>
+<p><b>Release:</b> 2021</p>
+<p><b>Cast:</b> Ryan Reynolds, Jodie Comer</p>
+<p><b>Story:</b> A video-game character discovers that his world is not what it seems.</p>
+<div class="rating">⭐ 7.1 / 10</div>
+
+<div class="reviews-list">
+<h4>📝 Movie Reviews</h4>
+<div class="review-item">
+<h5>Teja - Movie Fan</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>A fun movie with hilarious moments and creative video-game ideas.</p>
+</div>
+<div class="review-item">
+<h5>Ananya - Film Reviewer</h5>
+<div class="review-stars">★★★★☆ 4/5</div>
+<p>Colorful visuals and entertaining performances make it enjoyable.</p>
+</div>
+<div class="review-item">
+<h5>Harsha - Student</h5>
+<div class="review-stars">★★★★☆ 4/5</div>
+<p>A light-hearted action comedy with a positive message.</p>
+</div>
+</div>
+<button onclick="rateMovie(this)">Rate Movie ⭐</button>
+</div>
+</div>
+
+<!-- MOVIE 6 -->
+<div class="movie-card">
+<img src="https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg"
+alt="Your Name Poster">
+<div class="movie-info">
+<h3>Your Name</h3>
+<span class="genre">Animation / Fantasy</span>
+<p><b>Release:</b> 2016</p>
+<p><b>Cast:</b> Ryunosuke Kamiki, Mone Kamishiraishi</p>
+<p><b>Story:</b> Two teenagers mysteriously begin experiencing each other's lives.</p>
+<div class="rating">⭐ 8.4 / 10</div>
+
+<div class="reviews-list">
+<h4>📝 Movie Reviews</h4>
+<div class="review-item">
+<h5>Keerthi - Movie Fan</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>Beautiful animation and an emotional story that stays with you.</p>
+</div>
+<div class="review-item">
+<h5>Akash - Film Reviewer</h5>
+<div class="review-stars">★★★★★ 5/5</div>
+<p>The visuals, music, and mystery create a wonderful experience.</p>
+</div>
+<div class="review-item">
+<h5>Lavanya - Student</h5>
+<div class="review-stars">★★★★☆ 4/5</div>
+<p>A touching fantasy story with memorable characters and beautiful scenery.</p>
+</div>
+</div>
+<button onclick="rateMovie(this)">Rate Movie ⭐</button>
+</div>
+</div>
+
+</div>
+<p id="noResults" style="display:none; margin-top:20px;">
+No movies found. Try another search.
+</p>
+</section>
+
+<section class="section" id="reviews">
+<h2>⭐ About Movie Reviews</h2>
+<p style="color:#ccc;line-height:1.8;">
+Read individual reviews for every movie, compare sample ratings,
+and explore different opinions about acting, stories, visuals,
+music, and entertainment.
+</p>
+</section>
+
+<section class="section" id="about">
+<h2>🎥 About CineWorld</h2>
+<p style="color:#ccc;line-height:1.8;">
+CineWorld is a movie discovery website for film lovers.
+Explore movie posters, genres, release dates, actors, stories,
+critic-style reviews, and ratings in one place.
+</p>
+</section>
+
+<footer>
+<p>© 2026 CineWorld | Movie Reviews & Ratings</p>
+<p style="margin-top:8px;">Made with ❤️ for Movie Lovers</p>
+</footer>
+
+<script>
+function searchMovies() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let movies = document.querySelectorAll(".movie-card");
+    let count = 0;
+
+    movies.forEach(function(movie) {
+        if (movie.innerText.toLowerCase().includes(input)) {
+            movie.style.display = "";
+            count++;
+        } else {
+            movie.style.display = "none";
+        }
+    });
+
+    document.getElementById("noResults").style.display =
+        count === 0 ? "block" : "none";
+}
+
+function rateMovie(button) {
+    let rating = prompt("Rate this movie from 1 to 10:");
+
+    if (rating === null || rating.trim() === "") return;
+
+    let score = Number(rating);
+
+    if (!Number.isInteger(score) || score < 1 || score > 10) {
+        alert("Please enter a whole number from 1 to 10.");
+        return;
+    }
+
+    alert("Thank you for rating this movie " + score + "/10!");
+}
+</script>
+
+</body>
+</html>
